@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<table id="prof" class="table table-striped">
+    <th class="titulo" colspan="6"> Profesores </th>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Departamento</th>
+    </tr>
+
+
+        {% for profesores in profesor %}
+
+            <tr>
+              <td>{{ profesores.nombreProfesor }}</td>
+              <td>{{ profesores.apellidosProfesor }}</td>
+              <td>{{ profesores.departamentoProfesor }}</td>
+            </tr>
+
+        {% endfor %}
+</table>
+{% endblock %}

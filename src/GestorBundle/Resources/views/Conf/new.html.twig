@@ -1,0 +1,25 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <div class="form-group">
+        {{ form_label(form.params) }}
+        {{ form_errors(form.params) }}
+        {{ form_widget(form.params) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.configuracion) }}
+        {{ form_errors(form.configuracion) }}
+        {{ form_widget(form.configuracion) }}
+    </div>
+
+    <div>
+        {{ form_widget(form.guardar, {'attr': {'class': 'btn btn-success'}}) }}
+        {{ form_widget(form.borrar, {'attr': {'class': 'btn btn-warning'}}) }}
+    </div>
+
+{{ form_end(form) }}
+{% endblock %}

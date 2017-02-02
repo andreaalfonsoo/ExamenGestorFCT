@@ -1,0 +1,57 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+    encoders:
+        UsuariosBundle\Entity\User: bcrypt
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    providers:
+        gestorfct:
+              entity:
+                  class: UsuariosBundle:User
+                  property: username
+        in_memory:
+            memory:
+                users:
+                    admin:
+                        password: 1234
+                        roles: 'ROLE_ADMIN'
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        admin:
+            pattern: ^/admin
+            http_basic: ~
+            provider: in_memory
+
+        usuarios:
+            pattern: ^/
+            anonymous: ~
+            provider: gestorfct
+            form_login:
+                login_path: /usuarios/login
+                check_path: /usuarios/login
+            logout:
+                path:   /usuarios/logout
+                target: /
+
+        main:
+            anonymous: ~
+            # activate different ways to authenticate
+
+            # http_basic: ~
+            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+
+    access_control:
+          - {path: ^/usuarios/login,roles: IS_AUTHENTICATED_ANONYMOUSLY}
+          - {path: ^/usuarios/register,roles: IS_AUTHENTICATED_ANONYMOUSLY}
+          - {path: ^/conf,roles: ROLE_SUPER_ADMIN} #añadimos rol SUPER_ADMIN al control de acceso cuando entre por /conf
+          - {path: ^/,roles: ROLE_USER}
+          - {path: ^/admin,roles: ROLE_ADMIN}

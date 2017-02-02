@@ -1,0 +1,51 @@
+gestor_homepage:
+    path:     /
+    defaults: { _controller: GestorBundle:Empresa:all }
+
+all_Empresa:
+    path:     /Empresa/all
+    defaults: { _controller: GestorBundle:Empresa:all }
+
+new_Empresa:
+    path:     /Empresa/new
+    defaults: { _controller: GestorBundle:Empresa:crearEmpresa }
+
+all_Alumno:
+    path:     /Alumno/all
+    defaults: { _controller: GestorBundle:Alumno:all }
+
+empresa_get:
+    path:     /Empresa/GET
+    defaults: { _controller: GestorBundle:API:getEmpresas }
+    methods: [GET]
+
+all_Profesor:
+    path:     /Profesor/all
+    defaults: { _controller: GestorBundle:Profesor:all }
+
+new_Profesor:
+    path:     /Profesor/new
+    defaults: { _controller: GestorBundle:Profesor:crearProfesor }
+
+profesor_get:
+    path:     /Profesor/GET
+    defaults: { _controller: GestorBundle:APIProfesor:getProfesor }
+    methods: [GET]
+
+#Ruta a la lista de configuración 
+all_Conf:
+    path:     /conf/all
+    defaults: { _controller: GestorBundle:Conf:all }
+
+#Ruta al formulario de creación de configuración 
+new_Conf:
+    path:     /conf/new
+    defaults: { _controller: GestorBundle:Conf:crearConf }
+
+new_user:
+  path:     /Registro
+  defaults: { _controller: UsuariosBundle:Registration:register }
+
+login_user:
+  path:     /Login
+  defaults: { _controller: UsuariosBundle:Registration:login }

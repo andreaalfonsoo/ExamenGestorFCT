@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <div class="form-group">
+        {{ form_label(form.nombreEmpresa) }}
+        {{ form_errors(form.nombreEmpresa) }}
+        {{ form_widget(form.nombreEmpresa) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.direccionEmpresa) }}
+        {{ form_errors(form.direccionEmpresa) }}
+        {{ form_widget(form.direccionEmpresa) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.cp) }}
+        {{ form_errors(form.cp) }}
+        {{ form_widget(form.cp) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.telefono1Empresa) }}
+        {{ form_errors(form.telefono1Empresa) }}
+        {{ form_widget(form.telefono1Empresa) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.telefono2Empresa) }}
+        {{ form_errors(form.telefono2Empresa) }}
+        {{ form_widget(form.telefono2Empresa) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.fechaCreacionEmpresa) }}
+        {{ form_errors(form.fechaCreacionEmpresa) }}
+        {{ form_widget(form.fechaCreacionEmpresa) }}
+    </div>
+
+    <div>
+        {{ form_widget(form.guardar, {'attr': {'class': 'btn btn-success'}}) }}
+        {{ form_widget(form.borrar, {'attr': {'class': 'btn btn-warning'}}) }}
+    </div>
+
+{{ form_end(form) }}
+{% endblock %}

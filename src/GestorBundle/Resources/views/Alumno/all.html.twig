@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<table id="empresas" class="table table-striped">
+    <th class="titulo" colspan="6"> Alumnos </th>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido 1</th>
+        <th>Apellido 2</th>
+        <th>Ciclo</th>
+        <th>Empresa</th>
+    </tr>
+
+
+        {% for alumno in alumnos %}
+
+            <tr>
+              <td>{{ alumno.nombre }}</td>
+              <td>{{ alumno.apellido1 }}</td>
+              <td>{{ alumno.apellido2 }}</td>
+              <td>{{ alumno.ciclo }}</td>
+              <td>{{ alumno.empresa.nombreEmpresa }}</td>
+            </tr>
+
+        {% endfor %}
+</table>
+{% endblock %}

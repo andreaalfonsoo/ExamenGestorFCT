@@ -1,0 +1,23 @@
+usuarios:
+    resource: "@UsuariosBundle/Resources/config/routing.yml"
+    prefix:   /
+
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+gestor:
+    resource: "@GestorBundle/Resources/config/routing.yml"
+    prefix:   /
+
+conf:
+	resource: "@GestorBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+logout:
+    path: /usuarios/logout
+

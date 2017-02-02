@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+<table id="conf" class="table table-striped">
+    <th class="titulo" colspan="6"> Configuración </th>
+    <tr>
+        <th>Parámetros</th>
+        <th>Configuración</th>
+
+    </tr>
+
+
+        {% for conf in conf %}
+
+            <tr>
+              <td>{{ conf.params }}</td>
+              <td>{{ conf.configuracion }}</td>
+            </tr>
+
+        {% endfor %}
+</table>
+{% endblock %}

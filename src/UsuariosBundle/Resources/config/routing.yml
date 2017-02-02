@@ -1,0 +1,11 @@
+usuarios_homepage:
+    path:     /usuarios/
+    defaults: { _controller: UsuariosBundle:Default:index }
+
+register:
+    path:     /usuarios/register
+    defaults: { _controller: UsuariosBundle:Registration:register }
+
+login:
+    path:     /usuarios/login
+    defaults: { _controller: UsuariosBundle:Registration:login }

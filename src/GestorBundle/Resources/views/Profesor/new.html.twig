@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <div class="form-group">
+        {{ form_label(form.nombreProfesor) }}
+        {{ form_errors(form.nombreProfesor) }}
+        {{ form_widget(form.nombreProfesor) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.apellidosProfesor) }}
+        {{ form_errors(form.apellidosProfesor) }}
+        {{ form_widget(form.apellidosProfesor) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.departamentoProfesor) }}
+        {{ form_errors(form.departamentoProfesor) }}
+        {{ form_widget(form.departamentoProfesor) }}
+    </div>
+
+    <div>
+        {{ form_widget(form.guardar, {'attr': {'class': 'btn btn-success'}}) }}
+        {{ form_widget(form.borrar, {'attr': {'class': 'btn btn-warning'}}) }}
+    </div>
+
+{{ form_end(form) }}
+{% endblock %}
